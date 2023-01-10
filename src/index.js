@@ -1,6 +1,11 @@
 import './styles.css';
-import getCurrentWeatherInfo from './modules/weatherInfo';
+import { getCurrentWeatherInfo, eventHandler } from './modules/dataHandler';
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log(getCurrentWeatherInfo());
+  getCurrentWeatherInfo('Manila');
+});
+
+document.addEventListener('submit', (event) => {
+  event.preventDefault();
+  eventHandler();
 });
