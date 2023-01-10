@@ -1,17 +1,9 @@
+import { getUserLocation, fetchData } from './userLocation';
+
 const getCurrentWeatherInfo = (location) => {
   const currentWeatherInfo = {};
   const appID = 'a864b3057d366f0312e36cebd74c7077';
   const rawURL = `https://api.openweathermap.org/geo/1.0/direct?q=${location}&appid=${appID}`;
-
-  const fetchData = async (url) => {
-    try {
-      const response = await fetch(url, { mode: 'cors' });
-      const data = await response.json();
-      return data;
-    } catch (err) {
-      return console.log(err);
-    }
-  };
 
   const geocodeURL = async (type) => {
     try {
@@ -60,7 +52,7 @@ const getCurrentWeatherInfo = (location) => {
     currentWeatherInfo.cloudCover = weatherData.clouds.all;
     currentWeatherInfo.sunrise = weatherData.sys.sunrise;
     currentWeatherInfo.sunset = weatherData.sys.sunset;
-    currentWeatherInfo.country = weatherData.sys.country;
+    currentWeatherInfo.city = weatherData.name;
   };
 
   getWeatherInfo();
@@ -69,4 +61,4 @@ const getCurrentWeatherInfo = (location) => {
   return currentWeatherInfo;
 };
 
-export default getCurrentWeatherInfo;
+export { getCurrentWeatherInfo, getUserLocation };

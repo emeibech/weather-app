@@ -1,4 +1,4 @@
-import getCurrentWeatherInfo from './weatherInfo';
+import { getCurrentWeatherInfo, getUserLocation } from './weatherInfo';
 
 const eventHandler = () => {
   const input = document.querySelector('#location');
@@ -6,4 +6,4 @@ const eventHandler = () => {
   getCurrentWeatherInfo(location);
 };
 
-export { eventHandler, getCurrentWeatherInfo };
+export { eventHandler, getCurrentWeatherInfo, getUserLocation };
