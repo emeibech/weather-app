@@ -1,7 +1,5 @@
 import { fetchData } from './clientLocation';
 
-const currentWeatherInfo = {};
-
 const getCurrentWeatherInfo = (location) => {
   const appID = 'a864b3057d366f0312e36cebd74c7077';
   const rawURL = `https://api.openweathermap.org/geo/1.0/direct?q=${location}&appid=${appID}`;
@@ -41,20 +39,21 @@ const getCurrentWeatherInfo = (location) => {
 
     const [weatherData, forecastData] = data;
 
-    currentWeatherInfo.description = weatherData.weather[0].description;
-    currentWeatherInfo.pop = forecastData.list[0].pop;
-    currentWeatherInfo.humidity = weatherData.main.humidity;
-    currentWeatherInfo.visibility = weatherData.visibility;
-    currentWeatherInfo.temp = weatherData.main.temp;
-    currentWeatherInfo.feelsLike = weatherData.main.feels_like;
-    currentWeatherInfo.tempMin = weatherData.main.temp_min;
-    currentWeatherInfo.tempMax = weatherData.main.temp_max;
-    currentWeatherInfo.windSpeed = weatherData.wind.speed;
-    currentWeatherInfo.cloudCover = weatherData.clouds.all;
-    currentWeatherInfo.sunrise = weatherData.sys.sunrise;
-    currentWeatherInfo.sunset = weatherData.sys.sunset;
-    currentWeatherInfo.city = weatherData.name;
-    return { ...currentWeatherInfo };
+    return {
+      description: weatherData.weather[0].description,
+      pop: forecastData.list[0].pop,
+      humidity: weatherData.main.humidity,
+      visibility: weatherData.visibility,
+      temp: weatherData.main.temp,
+      feelsLike: weatherData.main.feels_like,
+      tempMin: weatherData.main.temp_min,
+      tempMax: weatherData.main.temp_max,
+      windSpeed: weatherData.wind.speed,
+      cloudCover: weatherData.clouds.all,
+      sunrise: weatherData.sys.sunrise,
+      sunset: weatherData.sys.sunset,
+      country: weatherData.sys.country,
+    };
   };
 
   return getWeatherInfo();
