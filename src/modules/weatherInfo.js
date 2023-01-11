@@ -1,7 +1,8 @@
-import { getUserLocation, fetchData } from './userLocation';
+import { fetchData } from './clientLocation';
+
+const currentWeatherInfo = {};
 
 const getCurrentWeatherInfo = (location) => {
-  const currentWeatherInfo = {};
   const appID = 'a864b3057d366f0312e36cebd74c7077';
   const rawURL = `https://api.openweathermap.org/geo/1.0/direct?q=${location}&appid=${appID}`;
 
@@ -53,12 +54,10 @@ const getCurrentWeatherInfo = (location) => {
     currentWeatherInfo.sunrise = weatherData.sys.sunrise;
     currentWeatherInfo.sunset = weatherData.sys.sunset;
     currentWeatherInfo.city = weatherData.name;
+    return { ...currentWeatherInfo };
   };
 
-  getWeatherInfo();
-
-  console.log(currentWeatherInfo);
-  return currentWeatherInfo;
+  return getWeatherInfo();
 };
 
-export { getCurrentWeatherInfo, getUserLocation };
+export default getCurrentWeatherInfo;

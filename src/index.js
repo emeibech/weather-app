@@ -1,12 +1,17 @@
 import './styles.css';
-import { getCurrentWeatherInfo, eventHandler, getUserLocation } from './modules/eventHandler';
+import processInfo from './modules/processInfo';
+import { getClientLocation } from './modules/clientLocation';
 
 document.addEventListener('DOMContentLoaded', async () => {
-  const location = await getUserLocation();
-  getCurrentWeatherInfo(location);
+  const location = await getClientLocation();
+  processInfo(location);
 });
 
-document.addEventListener('submit', (event) => {
+document.querySelector('form').addEventListener('submit', (event) => {
   event.preventDefault();
-  eventHandler();
+  const input = document.querySelector('#location');
+  const location = input.value;
+  processInfo(location);
+  input.value = '';
+  input.placeholder = 'Searching...';
 });
