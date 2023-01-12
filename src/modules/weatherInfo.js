@@ -53,6 +53,7 @@ const getCurrentWeatherInfo = (location) => {
       sunrise: weatherData.sys.sunrise,
       sunset: weatherData.sys.sunset,
       country: weatherData.sys.country,
+      timezone: weatherData.timezone,
     };
   };
 
