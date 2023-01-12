@@ -1,22 +1,9 @@
 import getCurrentWeatherInfo from './weatherInfo';
 import countries from '../countries.json';
 
-/* This is just a function for capitalizing the description.
-  This version look a little bit better than the previous one.
-  The "text-transform: capitalize" in CSS seems better and easier, though,
-  but I'll stick with this in case I need it in the future. */
-const capitalize = (description) => {
-  const returnValue = [];
-
-  description.forEach((item) => {
-    const word = (`${item}`);
-    const firstLetter = word.charAt(0).toUpperCase();
-    const remainingLetters = word.slice(1);
-    returnValue.push(`${firstLetter}${remainingLetters}`);
-  });
-
-  return returnValue.join(' ');
-};
+// This is just a function for capitalizing the description.
+const capitalize = (description) => description.split(' ')
+  .map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 
 const getPercentage = (number) => `${number * 100}%`;
 
@@ -38,7 +25,7 @@ const processInfo = async (location) => {
 
   console.log({
     metric: {
-      description: capitalize(info.description.split(' ')),
+      description: capitalize(info.description),
       pop: getPercentage(info.pop),
       humidity: `${info.humidity}%`,
       visibility: `${Math.round(info.visibility / 1000)} km`,
@@ -53,7 +40,7 @@ const processInfo = async (location) => {
       country: countries[info.country],
     },
     imperial: {
-      description: capitalize(info.description.split(' ')),
+      description: capitalize(info.description),
       pop: getPercentage(info.pop),
       humidity: `${info.humidity}%`,
       visibility: `${Math.round((info.visibility / 1000) * 0.62137119)} mi`,
