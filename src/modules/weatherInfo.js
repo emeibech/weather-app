@@ -54,6 +54,7 @@ const getCurrentWeatherInfo = (location) => {
       sunset: weatherData.sys.sunset,
       country: weatherData.sys.country,
       timezone: weatherData.timezone,
+      city: location,
     };
   };
 
