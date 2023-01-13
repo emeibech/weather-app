@@ -5,21 +5,51 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weather App</title>
-<script defer src="main.621514ab2eec6c2d794f.js"></script></head>
+<script defer src="main.3332ce76a4732f1b41b4.js"></script></head>
 <body>
   <header>
     <h1>Weather App</h1>
   </header>
 
   <main class="weather-info">
-    <h2 class="city" data-city></h2>
+    <div class="city">
+      <h2 data-city></h2>
+    </div>
+
     <div class="main-info">
-      <img src="" alt="" data-icon>
-      <h3 class="description" data-description></h3>
+      <div>
+        <div class="important">
+          <div class="icon">
+            <img src="" alt="" data-icon>
+          </div>
+          <div class="description">
+            <h3 data-description></h3>
+          </div>
+        </div>
+
+        <div class="pop">
+          <div>
+            <p data-pop></p>
+          </div>
+          <div class="chance">
+            <h3>Chance of Rain</h3>
+          </div>
+        </div>
+      </div>
+
       <div class="more-info" data-more-info>
-        <p></p>
-        <p></p>
-        <p></p>
+        <div>
+          <div class="humidity">
+            <p data-humidity></p>
+          </div>
+          <h4>Humidity</h4>
+        </div>
+        <div>
+          <div class="visibility">
+            <p data-visibility></p>
+          </div>
+          <h4>Visibility</h4>
+        </div>
       </div>
     </div>
 
