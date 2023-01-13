@@ -23,7 +23,7 @@ const processInfo = async (location) => {
 
   document.querySelector('#location').placeholder = 'Enter City';
 
-  console.log({
+  return {
     metric: {
       description: capitalize(info.description),
       pop: getPopPercentage(info.pop),
@@ -39,6 +39,7 @@ const processInfo = async (location) => {
       sunset: `${getReadableTimestamp(info.sunset + info.timezone)} PM`,
       country: countries[info.country],
       city: capitalize(info.city),
+      icon: info.icon,
     },
     imperial: {
       description: capitalize(info.description),
@@ -55,8 +56,9 @@ const processInfo = async (location) => {
       sunset: `${getReadableTimestamp(info.sunset + info.timezone)} PM`,
       country: countries[info.country],
       city: capitalize(info.city),
+      icon: info.icon,
     },
-  });
+  };
 };
 
 export default processInfo;

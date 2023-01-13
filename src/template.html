@@ -7,8 +7,25 @@
   <title>Weather App</title>
 </head>
 <body>
-  <main>
-    <h2>Weather App</h2>
+  <header>
+    <h1>Weather App</h1>
+  </header>
+
+  <main class="weather-info">
+    <h2 class="city" data-city></h2>
+    <div class="main-info">
+      <img src="" alt="" data-icon>
+      <h3 class="description" data-description></h3>
+      <div class="more-info" data-more-info>
+        <p></p>
+        <p></p>
+        <p></p>
+      </div>
+    </div>
+
+    <div class="temp"></div>
+
+    <div class="extra"></div>
     <form action="">
       <input type="search" placeholder="Enter City" id="location">
       <button>Search</button>

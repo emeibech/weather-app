@@ -10,18 +10,15 @@
 body {
   background-color: rgb(55, 49, 66);
   color: rgb(220, 220, 220);
-}
-
-main {
-  margin-top: 30vh;
-  display: grid;
-  place-items: center;
+  text-align: center;
 }
 
 h2,
 form {
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
+
+form {display: none;}
 
 input,
 button {
@@ -46,4 +43,15 @@ button {
   border: none;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   cursor: pointer;
+}
+
+/* Weather Information */
+.weather-info {
+  display: grid;
+  place-items: center;
+}
+
+.main-info {
+  display: flex;
+  flex-direction: column;
 }
