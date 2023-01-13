@@ -8,9 +8,20 @@
 }
 
 body {
-  background-color: rgb(55, 49, 66);
+  background-color: #38285c;
   color: rgb(220, 220, 220);
-  text-align: center;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 1rem;
+}
+
+h3 {
+  font-size: 1rem;
 }
 
 h2,
@@ -47,11 +58,75 @@ button {
 
 /* Weather Information */
 .weather-info {
+
+}
+
+.city {
+  /* border: 1px solid greenyellow; */
+  height: 40px;
+}
+
+.main-info {
+  margin-top: 1rem;
+  /* border: 1px solid hotpink; */
+}
+
+.main-info * {
+  /* border: 1px solid whitesmoke; */
+}
+
+.main-info > div:first-child {
+  width: 300px;
+  display: grid;
+  align-items: end;
+  grid-template-columns: 1fr 1fr;
+  margin-inline: auto;
+  /* gap: 1rem; */
+}
+
+.important {
   display: grid;
   place-items: center;
 }
 
-.main-info {
+.icon {
+  height: 100px;
+  width: 100px;
+}
+
+.pop {
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+  /* border: 1px solid saddlebrown; */
+}
+
+.description,
+.chance {
+  height: 20px;
+}
+
+.pop > div {
+  
+}
+
+.pop > div > p {
+  font-size: 3rem;
+}
+
+
+.more-info {
+  margin-top: 2rem;
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
+  font-size: 0.8rem;
+}
+
+.more-info > div {
+  text-align: center;
+}
+
+.humidity,
+.visibility {
+  height: 16px;
 }

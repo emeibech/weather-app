@@ -12,14 +12,44 @@
   </header>
 
   <main class="weather-info">
-    <h2 class="city" data-city></h2>
+    <div class="city">
+      <h2 data-city></h2>
+    </div>
+
     <div class="main-info">
-      <img src="" alt="" data-icon>
-      <h3 class="description" data-description></h3>
+      <div>
+        <div class="important">
+          <div class="icon">
+            <img src="" alt="" data-icon>
+          </div>
+          <div class="description">
+            <h3 data-description></h3>
+          </div>
+        </div>
+
+        <div class="pop">
+          <div>
+            <p data-pop></p>
+          </div>
+          <div class="chance">
+            <h3>Chance of Rain</h3>
+          </div>
+        </div>
+      </div>
+
       <div class="more-info" data-more-info>
-        <p></p>
-        <p></p>
-        <p></p>
+        <div>
+          <div class="humidity">
+            <p data-humidity></p>
+          </div>
+          <h4>Humidity</h4>
+        </div>
+        <div>
+          <div class="visibility">
+            <p data-visibility></p>
+          </div>
+          <h4>Visibility</h4>
+        </div>
       </div>
     </div>
 
