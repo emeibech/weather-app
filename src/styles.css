@@ -29,16 +29,18 @@ body {
 }
 
 main {
+  margin-top: 2rem;
   display: grid;
   place-items: center;
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 1rem;
   font-family: limelight;
-  margin-block: 1rem;
-  margin-inline: 1rem;
+  margin-block: 0.75rem;
+  margin-inline: 0.75rem;
   cursor: default;
+  color: rgb(215, 235, 250);
 }
 
 h2 {
