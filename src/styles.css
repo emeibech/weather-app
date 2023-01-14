@@ -66,6 +66,23 @@ button {
   height: 40px;
 }
 
+.temperature {
+  display: grid;
+  place-items: center
+}
+
+.temperature * {
+  /* border: 1px solid saddlebrown; */
+}
+
+.temp {
+  height: 7rem;
+}
+
+.temp > p {
+  font-size: 6rem;
+}
+
 .main-info {
   margin-top: 1rem;
   /* border: 1px solid hotpink; */
@@ -81,7 +98,6 @@ button {
   align-items: end;
   grid-template-columns: 1fr 1fr;
   margin-inline: auto;
-  /* gap: 1rem; */
 }
 
 .important {
@@ -106,9 +122,6 @@ button {
   height: 20px;
 }
 
-.pop > div {
-  
-}
 
 .pop > div > p {
   font-size: 3rem;
@@ -117,8 +130,9 @@ button {
 
 .more-info {
   margin-top: 2rem;
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 1rem;
   font-size: 0.8rem;
 }
 
@@ -127,6 +141,7 @@ button {
 }
 
 .humidity,
-.visibility {
-  height: 16px;
+.visibility,
+.wind-speed {
+  height: 1rem;
 }

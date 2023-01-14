@@ -7,6 +7,12 @@ const description = document.querySelector('[data-description]');
 const precipitation = document.querySelector('[data-pop]');
 const humidity = document.querySelector('[data-humidity]');
 const visibility = document.querySelector('[data-visibility]');
+const temp = document.querySelector('[data-temp]');
+const feelsLike = document.querySelector('[data-feels-like]');
+const windSpeed = document.querySelector('[data-wind-speed]');
+const cloudCover = document.querySelector('[data-cloud-cover]');
+const sunrise = document.querySelector('[data-sunrise]');
+const sunset = document.querySelector('[data-sunset]');
 
 const renderWeatherInfo = async (location) => {
   const { metric, imperial } = await processInfo(location);
@@ -18,6 +24,12 @@ const renderWeatherInfo = async (location) => {
   precipitation.textContent = metric.pop;
   humidity.textContent = metric.humidity;
   visibility.textContent = metric.visibility;
+  temp.textContent = metric.temp;
+  feelsLike.textContent += metric.feelsLike;
+  windSpeed.textContent = metric.windSpeed;
+  cloudCover.textContent = metric.cloudCover;
+  sunrise.textContent = metric.sunrise;
+  sunset.textContent = metric.sunset;
 
   console.log(metric);
 };

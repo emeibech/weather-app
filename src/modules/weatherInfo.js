@@ -46,8 +46,6 @@ const getCurrentWeatherInfo = (location) => {
       visibility: weatherData.visibility,
       temp: weatherData.main.temp,
       feelsLike: weatherData.main.feels_like,
-      tempMin: weatherData.main.temp_min,
-      tempMax: weatherData.main.temp_max,
       windSpeed: weatherData.wind.speed,
       cloudCover: weatherData.clouds.all,
       sunrise: weatherData.sys.sunrise,

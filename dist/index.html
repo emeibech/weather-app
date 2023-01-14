@@ -5,15 +5,24 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weather App</title>
-<script defer src="main.3332ce76a4732f1b41b4.js"></script></head>
+<script defer src="main.dd1b000dcb695639fd7d.js"></script></head>
 <body>
   <header>
     <h1>Weather App</h1>
   </header>
 
-  <main class="weather-info">
+  <main>
     <div class="city">
       <h2 data-city></h2>
+    </div>
+
+    <div class="temperature">
+      <div class="temp">
+        <p data-temp></p>
+      </div>
+      <div class="feels-like">
+        <p data-feels-like>Feels Like </p>
+      </div>
     </div>
 
     <div class="main-info">
@@ -36,30 +45,58 @@
           </div>
         </div>
       </div>
-
-      <div class="more-info" data-more-info>
-        <div>
-          <div class="humidity">
-            <p data-humidity></p>
-          </div>
-          <h4>Humidity</h4>
-        </div>
-        <div>
-          <div class="visibility">
-            <p data-visibility></p>
-          </div>
-          <h4>Visibility</h4>
-        </div>
-      </div>
     </div>
 
-    <div class="temp"></div>
+    <div class="more-info" data-more-info>
+      <div>
+        <div class="humidity">
+          <p data-humidity></p>
+        </div>
+        <h4>Humidity</h4>
+      </div>
 
-    <div class="extra"></div>
-    <form action="">
-      <input type="search" placeholder="Enter City" id="location">
-      <button>Search</button>
-    </form>
+      <div>
+        <div class="visibility">
+          <p data-visibility></p>
+        </div>
+        <h4>Visibility</h4>
+      </div>
+
+      <div>
+        <div class="wind-speed">
+          <p data-wind-speed></p>
+        </div>
+        <h4>Wind Speed</h4>
+      </div>
+
+      <div>
+        <div class="cloud-cover">
+          <p data-cloud-cover></p>
+        </div>
+        <h4>Cloud Cover</h4>
+      </div>
+
+      <div>
+        <div class="sunrise">
+          <p data-sunrise></p>
+        </div>
+        <h4>Sunrise</h4>
+      </div>
+
+      <div>
+        <div class="sunset">
+          <p data-sunset></p>
+        </div>
+        <h4>Sunset</h4>
+      </div>
+
+      
+    </div>
+
+  <form action="">
+    <input type="search" placeholder="Enter City" id="location">
+    <button>Search</button>
+  </form>
   </main>
 </body>
 </html>
