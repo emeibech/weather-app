@@ -29,7 +29,7 @@ const renderWeatherInfo = async (location) => {
   humidity.textContent = metric.humidity;
   visibility.textContent = metric.visibility;
   temp.textContent = metric.temp;
-  feelsLike.textContent = metric.feelsLike;
+  feelsLike.textContent = ` ${metric.feelsLike}`;
   windSpeed.textContent = metric.windSpeed;
   cloudCover.textContent = metric.cloudCover;
   sunrise.textContent = metric.sunrise;
