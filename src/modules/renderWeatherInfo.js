@@ -1,6 +1,6 @@
 import processInfo from './processInfo';
 import icons from '../assets/icons/icons';
-import searchSVG from '../assets/search-svg/search_white_24dp.svg';
+import searchSVG from '../assets/search-svg/search-default.svg';
 
 const city = document.querySelector('[data-city]');
 const icon = document.querySelector('[data-icon]');
