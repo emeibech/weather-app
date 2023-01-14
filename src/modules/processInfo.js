@@ -21,7 +21,7 @@ const getReadableTimestamp = (unix) => {
 const processInfo = async (location) => {
   const info = await getCurrentWeatherInfo(location);
 
-  document.querySelector('#location').placeholder = 'Enter City';
+  document.querySelector('#location').placeholder = 'Search';
 
   return {
     metric: {

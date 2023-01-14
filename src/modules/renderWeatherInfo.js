@@ -1,5 +1,6 @@
 import processInfo from './processInfo';
 import icons from '../assets/icons/icons';
+import searchSVG from '../assets/search-svg/search_white_24dp.svg';
 
 const city = document.querySelector('[data-city]');
 const icon = document.querySelector('[data-icon]');
@@ -13,6 +14,9 @@ const windSpeed = document.querySelector('[data-wind-speed]');
 const cloudCover = document.querySelector('[data-cloud-cover]');
 const sunrise = document.querySelector('[data-sunrise]');
 const sunset = document.querySelector('[data-sunset]');
+const imgSearch = document.querySelector('[data-search-svg]');
+
+imgSearch.src = searchSVG;
 
 const renderWeatherInfo = async (location) => {
   const { metric, imperial } = await processInfo(location);
@@ -25,7 +29,7 @@ const renderWeatherInfo = async (location) => {
   humidity.textContent = metric.humidity;
   visibility.textContent = metric.visibility;
   temp.textContent = metric.temp;
-  feelsLike.textContent += metric.feelsLike;
+  feelsLike.textContent = metric.feelsLike;
   windSpeed.textContent = metric.windSpeed;
   cloudCover.textContent = metric.cloudCover;
   sunrise.textContent = metric.sunrise;

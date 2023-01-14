@@ -12,55 +12,71 @@ body {
   color: rgb(220, 220, 220);
 }
 
+main {
+  display: grid;
+  place-items: center;
+}
+
 h1 {
   font-size: 1.5rem;
+  font-weight: 500;
 }
 
 h2 {
   font-size: 1rem;
+  font-weight: 500;
 }
 
 h3 {
-  font-size: 1rem;
+  font-size: 0.9rem;
+  font-weight: 400;
 }
 
-h2,
+h4 {
+  font-weight: 300;
+}
+
+p {
+  font-weight: 400;
+}
+
 form {
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
-form {display: none;}
+form * {
+  /* border: 1px solid sandybrown; */
+}
 
-input,
-button {
-  font-size: 1.5rem;
-  padding-block: 0.5rem;
-  padding-inline: 1rem;
+.search {
+  display: grid;
+  justify-content: center;
+  align-items: center;
 }
 
 input {
   outline: none;
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  border-bottom: 1px solid gray;
-  background-color: rgb(55, 49, 66);
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 3rem;
+  padding-block: 0.6rem;
+  padding-inline-start: 2rem;
+  background-color: #2b1958;
   color: antiquewhite;
+  grid-column: 1;
+  grid-row: 1;
+  width: 240px;
 }
 
-button {
-  color: rgb(50, 50, 50);
-  border-radius: 1rem;
-  border: none;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  cursor: pointer;
+.search-svg {
+  margin-left: 0.6rem;
+  grid-column: 1;
+  grid-row: 1;
+  height: 1rem;
+  width: 1rem;
 }
 
 /* Weather Information */
-.weather-info {
-
-}
-
 .city {
   /* border: 1px solid greenyellow; */
   height: 40px;
@@ -71,20 +87,22 @@ button {
   place-items: center
 }
 
-.temperature * {
-  /* border: 1px solid saddlebrown; */
-}
-
 .temp {
-  height: 7rem;
+  height: 6rem;
 }
 
 .temp > p {
-  font-size: 6rem;
+  font-size: 5rem;
+}
+
+.feels-like {
+  font-size: 0.8rem;
 }
 
 .main-info {
   margin-top: 1rem;
+  display: grid;
+  place-items: center;
   /* border: 1px solid hotpink; */
 }
 
@@ -97,31 +115,39 @@ button {
   display: grid;
   align-items: end;
   grid-template-columns: 1fr 1fr;
-  margin-inline: auto;
 }
 
 .important {
   display: grid;
   place-items: center;
+  height: 6.5rem;
 }
 
 .icon {
-  height: 100px;
-  width: 100px;
+  display: grid;
+  place-items: center;
+  height: 80px;
+  width: 80px;
+}
+
+.percentage {
+  height: 80px;
+  display: grid;
+  place-items: center;
 }
 
 .pop {
   display: grid;
   place-items: center;
-  gap: 1rem;
+  height: 6.5rem;
   /* border: 1px solid saddlebrown; */
 }
 
 .description,
 .chance {
   height: 20px;
+  align-self: end;
 }
-
 
 .pop > div > p {
   font-size: 3rem;
@@ -132,8 +158,10 @@ button {
   margin-top: 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  place-items: center;
   row-gap: 1rem;
   font-size: 0.8rem;
+  width: 300px;
 }
 
 .more-info > div {

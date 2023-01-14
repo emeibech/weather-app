@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weather App</title>
-<script defer src="main.dd1b000dcb695639fd7d.js"></script></head>
+<script defer src="main.7e8c40bf569b893cea57.js"></script></head>
 <body>
   <header>
     <h1>Weather App</h1>
@@ -21,7 +21,7 @@
         <p data-temp></p>
       </div>
       <div class="feels-like">
-        <p data-feels-like>Feels Like </p>
+        <p>Feels Like <span data-feels-like></span></p>
       </div>
     </div>
 
@@ -37,7 +37,7 @@
         </div>
 
         <div class="pop">
-          <div>
+          <div class="percentage">
             <p data-pop></p>
           </div>
           <div class="chance">
@@ -89,14 +89,14 @@
         </div>
         <h4>Sunset</h4>
       </div>
-
-      
     </div>
 
-  <form action="">
-    <input type="search" placeholder="Enter City" id="location">
-    <button>Search</button>
-  </form>
+    <form action="">
+        <div class="search">
+            <input type="search" placeholder="Search" id="location">
+            <img src="" alt="" class="search-svg" data-search-svg>
+        </div>
+    </form>
   </main>
 </body>
 </html>

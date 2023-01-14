@@ -21,7 +21,7 @@
         <p data-temp></p>
       </div>
       <div class="feels-like">
-        <p data-feels-like>Feels Like </p>
+        <p>Feels Like <span data-feels-like></span></p>
       </div>
     </div>
 
@@ -37,7 +37,7 @@
         </div>
 
         <div class="pop">
-          <div>
+          <div class="percentage">
             <p data-pop></p>
           </div>
           <div class="chance">
@@ -89,14 +89,14 @@
         </div>
         <h4>Sunset</h4>
       </div>
-
-      
     </div>
 
-  <form action="">
-    <input type="search" placeholder="Enter City" id="location">
-    <button>Search</button>
-  </form>
+    <form action="">
+        <div class="search">
+            <input type="search" placeholder="Search" id="location">
+            <img src="" alt="" class="search-svg" data-search-svg>
+        </div>
+    </form>
   </main>
 </body>
 </html>
