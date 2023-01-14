@@ -2,22 +2,10 @@ import { fetchData } from './clientLocation';
 
 const getCurrentWeatherInfo = (location) => {
   const appID = 'a864b3057d366f0312e36cebd74c7077';
-  const rawURL = `https://api.openweathermap.org/geo/1.0/direct?q=${location}&appid=${appID}`;
-
-  const geocodeURL = async (type) => {
-    try {
-      const data = await fetchData(rawURL);
-      const geocodedURL = `https://api.openweathermap.org/data/2.5/${type}?lat=${data[0].lat}&lon=${data[0].lon}&cnt=&appid=${appID}`;
-      return geocodedURL;
-    } catch (err) {
-      return console.log(err);
-    }
-  };
 
   const getWeatherData = async () => {
     try {
-      const url = await geocodeURL('weather');
-      const data = await fetchData(url);
+      const data = await fetchData(`https://api.openweathermap.org/data/2.5/weather?q=${location}&APPID=${appID}`);
       return data;
     } catch (err) {
       return console.log(err);
@@ -26,8 +14,7 @@ const getCurrentWeatherInfo = (location) => {
 
   const getForecastData = async () => {
     try {
-      const url = await geocodeURL('forecast');
-      const data = await fetchData(url);
+      const data = await fetchData(`https://api.openweathermap.org/data/2.5/forecast?q=${location}&APPID=${appID}`);
       return data;
     } catch (err) {
       return console.log(err);
@@ -52,7 +39,7 @@ const getCurrentWeatherInfo = (location) => {
       sunset: weatherData.sys.sunset,
       country: weatherData.sys.country,
       timezone: weatherData.timezone,
-      city: location,
+      city: weatherData.name,
       icon: weatherData.weather[0].icon,
     };
   };
