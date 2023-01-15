@@ -38,7 +38,7 @@ main {
   margin-top: 1rem;
   display: grid;
   place-items: center;
-  height: clamp(336px, calc(1rem + 75vh), 1080px);
+  height: clamp(336px, calc(1rem + 70vh), 1080px);
   font-family: comfortaa;
   row-gap: 1rem;
 }
@@ -130,6 +130,8 @@ p { font-weight: 400; }
 .more-info > div { text-align: center; }
 
 /* <-------------------------Search bar-------------------------> */
+form { margin-top: 1rem;}
+
 .search {
   display: grid;
   justify-content: center;
@@ -139,11 +141,12 @@ p { font-weight: 400; }
 input {
   outline: none;
   font-family: comfortaa;
-  font-size: clamp(0.9rem, calc(0.25rem + 3vw), 1.2rem);
+  font-size: clamp(0.9rem, calc(0.25rem + 2vw), 1.1rem);
   border: none;
   border-radius: 3rem;
-  padding-block: clamp(0.5rem, calc(0.25rem + 3vw), 0.75rem);
-  padding-inline: 2rem;
+  padding-top: clamp(0.5rem, calc(0.25rem + 3vw), 0.6rem);
+  padding-bottom: 0.5rem;
+  padding-inline: 2.5rem;
   background-color: rgb(20, 10, 40);
   color: aliceblue;
   grid-column: 1;
@@ -152,7 +155,7 @@ input {
 }
 
 .search-svg {
-  margin-left: 0.6rem;
+  margin-left: 0.75rem;
   grid-column: 1;
   grid-row: 1;
   height: clamp(1rem, calc(0.25rem + 10vw), 1.3rem);
@@ -160,7 +163,7 @@ input {
 }
 
 .clear {
-  margin-right: 0.6rem;
+  margin-right: 0.75rem;
   grid-row: 1;
   grid-column: 1;
   width: 1rem;
@@ -173,7 +176,7 @@ input {
   position: absolute;
   display: grid;
   place-items: center;
-  height: clamp(280px, calc(1rem + 50vh), 960px);
+  height: clamp(336px, calc(1rem + 70vh), 1080px);
   width: clamp(318px, calc(4rem + 80vw), 960px);
   background-color: rgb(35, 15, 75);
 }
