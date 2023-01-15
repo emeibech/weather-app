@@ -1,3 +1,7 @@
+:root {
+  --custom-width: clamp(318px, calc(6rem + 70vw), 960px);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -26,15 +30,19 @@ a:visited {
 body {
   background-color: #38285c;
   color: rgb(220, 220, 220);
+  margin-inline: auto;
+  width: var(--custom-width);
 }
 
 main {
-  margin-top: 2rem;
+  margin-top: 1rem;
   display: grid;
   place-items: center;
+  height: clamp(336px, calc(1rem + 70vh), 1080px);
 }
 
-/* main * {border: 1px solid #ac4ba8;} */
+/* main {border: 1px solid hotpink;}
+main * {border: 1px solid #ac4ba8;} */
 
 h1,
 h2,
@@ -46,20 +54,20 @@ span {
 }
 
 h1 {
-  font-size: 1rem;
+  font-size: clamp(0.75rem, calc(0.25rem + 2.5vw), 1.5rem);
   font-family: limelight;
-  margin-block: 0.75rem;
-  margin-inline: 0.75rem;
+  margin-block: clamp(0.5rem, calc(0.1rem + 2vh), 2rem);
+  margin-inline: 0.25rem;
   color: rgb(215, 235, 250);
+  text-align: start;
 }
 
 h2 {
-  font-size: 1rem;
+  font-size: clamp(0.75rem, calc(0.25rem + 4vw), 2rem);
   font-weight: 500;
 }
 
 h3 {
-  font-size: 0.9rem;
   font-weight: 400;
 }
 
@@ -72,37 +80,34 @@ p {
 }
 
 /* <-------------------------Weather Information-------------------------> */
-
 .temperature {
   display: grid;
   place-items: center
 }
 
 .temp {
-  font-size: 5rem;
+  font-size: clamp(5rem, calc(5rem + 4vw), 8rem);
 }
 
 .feels-like {
-  font-size: 0.8rem;
+  font-size: clamp(0.8rem, calc(0.5rem + 2vw), 1.1rem);
 }
 
 .main-info {
-  margin-top: 1rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  width: 300px;
+  width: var(--custom-width);
 }
 
 
 .important {
   display: grid;
   place-items: center;
-  height: 6.5rem;
 }
 
 .percentage {
   align-self: end;
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   width: 80px;
   text-align: center;
 }
@@ -110,22 +115,22 @@ p {
 .pop {
   display: grid;
   place-items: center;
-  height: 6.5rem;
-  /* border: 1px solid saddlebrown; */
+  height: 7rem;
+  align-self: end;
 }
 
 .description,
 .chance {
   align-self: end;
+  font-size: clamp(0.9rem, calc(0.5rem + 3vw), 1.5rem);
 }
 
 .more-info {
-  margin-top: 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   row-gap: 1rem;
-  font-size: 0.8rem;
-  width: 300px;
+  font-size: clamp(0.8rem, calc(0.25rem + 3vw), 1.1rem);
+  width: var(--custom-width);
 }
 
 .more-info > div {
@@ -134,7 +139,7 @@ p {
 
 /* <-------------------------Search bar-------------------------> */
 form {
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 form * {
@@ -149,7 +154,7 @@ form * {
 
 input {
   outline: none;
-  font-size: 0.9rem;
+  font-size: clamp(0.9rem, calc(0.25rem + 3vw), 1.2rem);
   border: none;
   border-radius: 3rem;
   padding-block: 0.6rem;
@@ -158,7 +163,7 @@ input {
   color: antiquewhite;
   grid-column: 1;
   grid-row: 1;
-  width: 240px;
+  width: clamp(240px, calc(1rem + 70vw), 360px);
 }
 
 .search-svg {
