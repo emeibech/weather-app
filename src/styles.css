@@ -29,7 +29,7 @@ body {
   background-color: #38285c;
   color: rgb(220, 220, 220);
   margin-inline: auto;
-  width: var(--custom-width);
+  width: clamp(318px, calc(6rem + 70vw), 960px);
 }
 
 main {
@@ -79,9 +79,8 @@ p { font-weight: 400; }
 .main-info {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  width: var(--custom-width);
+  width: clamp(318px, calc(6rem + 70vw), 500px);
 }
-
 
 .important {
   display: grid;
@@ -113,7 +112,7 @@ p { font-weight: 400; }
   grid-template-columns: 1fr 1fr 1fr;
   row-gap: 1rem;
   font-size: clamp(0.8rem, calc(0.25rem + 3vw), 1.1rem);
-  width: var(--custom-width);
+  width: clamp(318px, calc(6rem + 70vw), 720px);
 }
 
 .more-info > div { text-align: center; }
