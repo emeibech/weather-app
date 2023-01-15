@@ -9,6 +9,12 @@
 <body>
   <header>
     <h1>Weather App</h1>
+    <div class="unit-selector" unit-selector>
+      <button class="metric" type="button" data-metric value="true">°C</button>
+      <div class="separator"></div>
+      <button class="imperial" type="button" data-imperial value="false">°F</button>
+    </div>
+    
   </header>
 
   <main>
@@ -65,7 +71,7 @@
       </div>
     </div>
   </main>
-  
+
   <form action="">
     <div class="search">
         <input type="search" placeholder="Search" id="location">
