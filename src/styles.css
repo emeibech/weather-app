@@ -14,9 +14,7 @@ a {
   color: #ac4ba8;
 }
 
-a:visited {
-  color: #833980;
-}
+a:visited { color: #833980; }
 
 @font-face {
   font-family: limelight;
@@ -41,17 +39,12 @@ main {
   height: clamp(336px, calc(1rem + 70vh), 1080px);
 }
 
-/* main {border: 1px solid hotpink;}
-main * {border: 1px solid #ac4ba8;} */
-
 h1,
 h2,
 h3,
 h4,
 p,
-span {
-  cursor: default;
-}
+span { cursor: default; }
 
 h1 {
   font-size: clamp(0.75rem, calc(0.25rem + 2.5vw), 1.5rem);
@@ -67,17 +60,11 @@ h2 {
   font-weight: 500;
 }
 
-h3 {
-  font-weight: 400;
-}
+h3 { font-weight: 400; }
 
-h4 {
-  font-weight: 300;
-}
+h4 { font-weight: 300; }
 
-p {
-  font-weight: 400;
-}
+p { font-weight: 400; }
 
 /* <-------------------------Weather Information-------------------------> */
 .temperature {
@@ -85,13 +72,9 @@ p {
   place-items: center
 }
 
-.temp {
-  font-size: clamp(5rem, calc(5rem + 4vw), 8rem);
-}
+.temp { font-size: clamp(5rem, calc(5rem + 4vw), 8rem); }
 
-.feels-like {
-  font-size: clamp(0.8rem, calc(0.5rem + 2vw), 1.1rem);
-}
+.feels-like { font-size: clamp(0.8rem, calc(0.5rem + 2vw), 1.1rem); }
 
 .main-info {
   display: grid;
@@ -133,18 +116,10 @@ p {
   width: var(--custom-width);
 }
 
-.more-info > div {
-  text-align: center;
-}
+.more-info > div { text-align: center; }
 
 /* <-------------------------Search bar-------------------------> */
-form {
-  margin-top: 1rem;
-}
-
-form * {
-  /* border: 1px solid sandybrown; */
-}
+form { margin-top: 1rem; }
 
 .search {
   display: grid;
