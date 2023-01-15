@@ -49,6 +49,8 @@ const renderWeatherInfo = async (location) => {
   cloudCover.textContent = metric.cloudCover;
   sunrise.textContent = metric.sunrise;
   sunset.textContent = metric.sunset;
+
+  removeLoadingAnimation();
 };
 
-export { renderWeatherInfo, loadingAnimation, removeLoadingAnimation };
+export { renderWeatherInfo, loadingAnimation };

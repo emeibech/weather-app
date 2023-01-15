@@ -1,5 +1,5 @@
 import './styles.css';
-import { renderWeatherInfo, loadingAnimation, removeLoadingAnimation } from './modules/renderWeatherInfo';
+import { renderWeatherInfo, loadingAnimation } from './modules/renderWeatherInfo';
 import { getClientLocation } from './modules/clientLocation';
 import searchWhite from './assets/search-svg/search-white.svg';
 import searchDefault from './assets/search-svg/search-default.svg';
@@ -13,16 +13,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   loadingAnimation();
   const location = await getClientLocation();
   renderWeatherInfo(location);
-
-  setTimeout(() => {
-    removeLoadingAnimation();
-  }, 250);
-
   search.value = '';
 });
 
 document.querySelector('form').addEventListener('submit', (event) => {
   event.preventDefault();
+  loadingAnimation();
   const location = search.value;
   renderWeatherInfo(location);
   search.placeholder = 'Searching...';
