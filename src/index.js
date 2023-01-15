@@ -35,9 +35,13 @@ search.addEventListener('blur', () => {
 
 search.addEventListener('input', () => {
   clear.src = clearSVG;
-  clear.addEventListener('mouseup', () => {
+  clear.setAttribute('height', '16px');
+  clear.setAttribute('width', '16px');
+  clear.addEventListener('click', () => {
     search.value = '';
     clear.src = '';
+    clear.setAttribute('height', '0');
+    clear.setAttribute('width', '0');
     search.focus();
   });
 });
