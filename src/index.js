@@ -22,6 +22,8 @@ document.querySelector('form').addEventListener('submit', (event) => {
   search.placeholder = 'Searching...';
   search.value = '';
   clear.src = '';
+  clear.setAttribute('height', '0');
+  clear.setAttribute('width', '0');
   search.blur();
 });
 
