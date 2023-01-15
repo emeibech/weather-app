@@ -18,8 +18,23 @@ const imgSearch = document.querySelector('[data-search-svg]');
 
 imgSearch.src = searchSVG;
 
+const loadingAnimation = () => {
+  const main = document.querySelector('main');
+  const overlay = document.createElement('div');
+  overlay.className = 'overlay';
+  const spinner = document.createElement('div');
+  spinner.className = 'spinner';
+  overlay.appendChild(spinner);
+  main.appendChild(overlay);
+};
+
+const removeLoadingAnimation = () => {
+  const main = document.querySelector('main');
+  main.removeChild(main.lastChild);
+};
+
 const renderWeatherInfo = async (location) => {
-  const { metric, imperial } = await processInfo(location);
+  const { metric } = await processInfo(location);
 
   city.textContent = `${metric.city}, ${metric.country}`;
   icon.src = icons[metric.icon];
@@ -34,8 +49,6 @@ const renderWeatherInfo = async (location) => {
   cloudCover.textContent = metric.cloudCover;
   sunrise.textContent = metric.sunrise;
   sunset.textContent = metric.sunset;
-
-  console.log(metric);
 };
 
-export default renderWeatherInfo;
+export { renderWeatherInfo, loadingAnimation, removeLoadingAnimation };

@@ -1,5 +1,5 @@
 import './styles.css';
-import renderWeatherInfo from './modules/renderWeatherInfo';
+import { renderWeatherInfo, loadingAnimation, removeLoadingAnimation } from './modules/renderWeatherInfo';
 import { getClientLocation } from './modules/clientLocation';
 import searchWhite from './assets/search-svg/search-white.svg';
 import searchDefault from './assets/search-svg/search-default.svg';
@@ -10,8 +10,14 @@ const imgSearch = document.querySelector('[data-search-svg]');
 const clear = document.querySelector('[data-clear]');
 
 document.addEventListener('DOMContentLoaded', async () => {
+  loadingAnimation();
   const location = await getClientLocation();
   renderWeatherInfo(location);
+
+  setTimeout(() => {
+    removeLoadingAnimation();
+  }, 250);
+
   search.value = '';
 });
 

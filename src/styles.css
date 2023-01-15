@@ -115,7 +115,7 @@ p { font-weight: 400; }
 .description,
 .chance {
   align-self: end;
-  font-size: clamp(0.9rem, calc(0.5rem + 3vw), 1.5rem);
+  font-size: clamp(0.9rem, calc(0.5rem + 2.5vw), 1.5rem);
   text-align: center;
 }
 
@@ -165,4 +165,29 @@ input {
   grid-column: 1;
   width: 1rem;
   justify-self: end;
+}
+
+/* <-------------------------Loading Animation-------------------------> */
+
+.overlay {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  height: clamp(336px, calc(1rem + 75vh), 1080px);
+  width: clamp(318px, calc(4rem + 80vw), 960px);
+  background-color: rgb(35, 15, 75);
+}
+
+.spinner {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  border: 6px solid aliceblue;
+  border-top-color: rgb(35, 15, 75);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
