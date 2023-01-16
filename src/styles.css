@@ -205,7 +205,7 @@ input {
   position: absolute;
   display: grid;
   place-items: center;
-  height: clamp(336px, calc(1rem + 70vh), 1080px);
+  height: clamp(336px, calc(1rem + 66vh), 1080px);
   width: clamp(318px, calc(4rem + 80vw), 960px);
   background-color: rgb(35, 15, 75);
 }
