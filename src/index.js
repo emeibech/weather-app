@@ -8,6 +8,7 @@ import {
   loadingAnimation,
   setToMetric,
   setToImperial,
+  removeOverlay,
 } from './modules/renderWeatherInfo';
 
 const search = document.querySelector('#location');
@@ -27,15 +28,21 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 document.querySelector('form').addEventListener('submit', (event) => {
   event.preventDefault();
-  loadingAnimation();
   const location = search.value;
-  renderWeatherInfo(location);
-  search.placeholder = 'Searching...';
-  search.value = '';
-  clear.src = '';
-  clear.setAttribute('height', '0');
-  clear.setAttribute('width', '0');
-  search.blur();
+
+  if (location === '') {
+    search.focus();
+  } else {
+    removeOverlay();
+    loadingAnimation();
+    renderWeatherInfo(location);
+    search.placeholder = 'Searching...';
+    search.value = '';
+    clear.src = '';
+    clear.setAttribute('height', '0');
+    clear.setAttribute('width', '0');
+    search.blur();
+  }
 });
 
 search.addEventListener('focus', () => {

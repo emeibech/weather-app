@@ -72,12 +72,14 @@ main {
   row-gap: 1rem;
 }
 
-h1,
 h2,
 h3,
 h4,
 p,
-span { cursor: default; }
+span { 
+  cursor: default;
+  text-align: center;
+}
 
 h1 {
   font-size: clamp(0.75rem, calc(0.25rem + 2.5vw), 1.5rem);
@@ -85,13 +87,12 @@ h1 {
   margin-block: clamp(0.5rem, calc(0.1rem + 2vh), 2rem);
   margin-inline: 0.25rem;
   color: rgb(180, 180, 240);
-  text-align: start;
+  cursor: pointer;
 }
 
 h2 {
   font-size: clamp(0.75rem, calc(0.25rem + 4vw), 2rem);
   font-weight: 500;
-  text-align: center;
 }
 
 h3 { font-weight: 400; }
@@ -131,7 +132,6 @@ p { font-weight: 400; }
   align-self: end;
   font-size: 1.8rem;
   width: 80px;
-  text-align: center;
 }
 
 .pop {
@@ -145,7 +145,6 @@ p { font-weight: 400; }
 .chance {
   align-self: end;
   font-size: clamp(0.9rem, calc(0.5rem + 2.5vw), 1.5rem);
-  text-align: center;
 }
 
 .more-info {
@@ -155,8 +154,6 @@ p { font-weight: 400; }
   font-size: clamp(0.8rem, calc(0.25rem + 3vw), 1.1rem);
   width: clamp(318px, calc(6rem + 70vw), 720px);
 }
-
-.more-info > div { text-align: center; }
 
 /* <-------------------------Search bar-------------------------> */
 form { margin-top: 1rem;}

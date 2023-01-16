@@ -22,15 +22,17 @@ const loadingAnimation = () => {
   const main = document.querySelector('main');
   const overlay = document.createElement('div');
   overlay.className = 'overlay';
+  overlay.setAttribute('data-overlay', '');
   const spinner = document.createElement('div');
   spinner.className = 'spinner';
   overlay.appendChild(spinner);
   main.appendChild(overlay);
 };
 
-const removeLoadingAnimation = () => {
+const removeOverlay = () => {
   const main = document.querySelector('main');
-  main.removeChild(main.lastChild);
+  const overlay = document.querySelector('[data-overlay]');
+  if (overlay !== null) main.removeChild(overlay);
 };
 
 const setToMetric = () => {
@@ -48,25 +50,44 @@ const setToImperial = () => {
 };
 
 const renderWeatherInfo = async (location) => {
-  const { metric, imperial } = await processInfo(location);
+  try {
+    const info = await processInfo(location);
 
-  metricData = { ...metric };
-  imperialData = { ...imperial };
+    if (info.cod > 399) {
+      removeOverlay();
 
-  city.textContent = `${metric.city}, ${metric.country}`;
-  icon.src = icons[metric.icon];
-  icon.setAttribute('alt', metric.description);
-  description.textContent = metric.description;
-  precipitation.textContent = metric.pop;
-  humidity.textContent = metric.humidity;
-  cloudCover.textContent = metric.cloudCover;
-  sunrise.textContent = metric.sunrise;
-  sunset.textContent = metric.sunset;
+      const main = document.querySelector('main');
+      const overlay = document.createElement('div');
+      overlay.className = 'overlay';
+      overlay.setAttribute('data-overlay', '');
+      const errorMessage = document.createElement('h3');
+      errorMessage.textContent = `${info.message.charAt(0).toUpperCase() + info.message.slice(1)}. Try searching for a different location.`;
+      overlay.appendChild(errorMessage);
+      main.appendChild(overlay);
+    }
 
-  if (metricSelector.value === 'true') setToMetric();
-  if (imperialSelector.value === 'true') setToImperial();
+    if (info.cod === undefined) {
+      metricData = { ...info.metric };
+      imperialData = { ...info.imperial };
 
-  removeLoadingAnimation();
+      city.textContent = `${metricData.city}, ${metricData.country}`;
+      icon.src = icons[metricData.icon];
+      icon.setAttribute('alt', metricData.description);
+      description.textContent = metricData.description;
+      precipitation.textContent = metricData.pop;
+      humidity.textContent = metricData.humidity;
+      cloudCover.textContent = metricData.cloudCover;
+      sunrise.textContent = metricData.sunrise;
+      sunset.textContent = metricData.sunset;
+
+      if (metricSelector.value === 'true') setToMetric();
+      if (imperialSelector.value === 'true') setToImperial();
+
+      removeOverlay();
+    }
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 export {
@@ -74,4 +95,5 @@ export {
   loadingAnimation,
   setToMetric,
   setToImperial,
+  removeOverlay,
 };

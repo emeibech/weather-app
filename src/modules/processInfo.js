@@ -23,6 +23,8 @@ const processInfo = async (location) => {
 
   document.querySelector('#location').placeholder = 'Search';
 
+  if (info.cod > 399) return info;
+
   return {
     metric: {
       description: capitalize(info.description),

@@ -26,6 +26,9 @@ const getCurrentWeatherInfo = (location) => {
 
     const [weatherData, forecastData] = data;
 
+    if (weatherData.cod > 399 || forecastData.cod > 399) {
+      return weatherData;
+    }
     return {
       description: weatherData.weather[0].description,
       pop: forecastData.list[0].pop,
