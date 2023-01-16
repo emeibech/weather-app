@@ -67,7 +67,7 @@ main {
   margin-top: 1rem;
   display: grid;
   place-items: center;
-  height: clamp(336px, calc(1rem + 70vh), 1080px);
+  height: clamp(336px, calc(1rem + 66vh), 1080px);
   font-family: comfortaa;
   row-gap: 1rem;
 }
