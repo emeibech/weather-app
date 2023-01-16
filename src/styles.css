@@ -20,10 +20,10 @@
 
 a {
   text-decoration: none;
-  color: #ac4ba8;
+  color: #4bac97;
 }
 
-a:visited { color: #833980; }
+a:visited { color: #395983; }
 
 header {
   display: flex;
@@ -219,4 +219,14 @@ input {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+/* <-------------------------Footer-------------------------> */
+footer {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-family: comfortaa;
 }
